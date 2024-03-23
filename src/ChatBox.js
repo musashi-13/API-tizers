@@ -1,56 +1,100 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './ChatBox.css'; // You can create ChatBox.css file for styling
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faSpinner } from '@fortawesome/free-solid-svg-icons'; // Added loading spinner icon
 import { Link } from 'react-router-dom';
+import { GoogleGenerativeAI } from "@google/generative-ai";
 
-export default function ChatBox() {
-    const [prompt, setPrompt] = useState('');
-    const [response, setResponse] = useState('');
+const AiwithText = () => {
+    const genAI = new GoogleGenerativeAI('AIzaSyA9Zldp6ml7Y97uANdAVgHz8KJ0bboXC_E');
 
-    const handleSubmit = async (event) => {
-        event.preventDefault();
+    const [search, setSearch] = useState('');
+    const [aiResponse, setResponse] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [knowledgeBase, setKnowledgeBase] = useState('');
+    const [history, setHistory] = useState([]);
 
-        // Make an API call to get the response for the prompt
+    useEffect(() => {
+        loadKnowledgeBase();
+    }, []);
+
+    const loadKnowledgeBase = async () => {
         try {
-            const apiResponse = await fetch('YOUR_API_ENDPOINT', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ prompt }),
-            });
-            const responseData = await apiResponse.json();
-            setResponse(responseData.response); // Assuming your API returns a 'response' field
+            const response = await fetch('./ok.txt');
+            const knowledge = await response.text();
+            setKnowledgeBase(knowledge);
         } catch (error) {
-            console.error('Error fetching response:', error);
-            // Handle error
+            console.error('Error loading knowledge base:', error);
         }
     };
 
+    const aiRun = async () => {
+        setLoading(true);
+        setResponse([]);
+        const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+        const prompt = `${knowledgeBase} ${search}`;
+        const result = await model.generateContent(prompt);
+        const response = await result.response;
+        const text = response.text().split('\n');
+        setResponse(text);
+        setLoading(false);
+        addToHistory(search, text);
+    }
+
+    const addToHistory = (prompt, response) => {
+        const updatedHistory = [...history.slice(-2), { prompt, response }];
+        setHistory(updatedHistory);
+    }
+
+    const handleChangeSearch = (e) => {
+        setSearch(e.target.value);
+    }
+
+    const handleClick = () => {
+        if (search.trim() !== '') {
+            aiRun();
+        }
+    }
+
     return (
-        <div className="chatBoxPage">
-            <form className="form" onSubmit={handleSubmit}>
-                <p className="Heading">Chat with our AI</p>
-                <input
-                    type="text"
-                    className="inputBox"
-                    placeholder="Type your prompt here"
-                    value={prompt}
-                    onChange={(e) => setPrompt(e.target.value)}
-                />
-                <button type="submit" className="submitBtn">
-                    Submit
-                </button>
-                {response && (
-                    <div className="responseContainer">
-                        <p className="response">{response}</p>
+        <div className="container">
+            <h1 className="heading">Ask Anything to Our AI ChatBot</h1>
+            <div className="content">
+                <div className="input-container">
+                    <input className="input-field" placeholder='Ask something...' onChange={(e) => handleChangeSearch(e)} />
+                    <button className="search-button" onClick={() => handleClick()}>
+                        {loading ? <FontAwesomeIcon icon={faSpinner} spin /> : "Ask"}
+                    </button>
+                </div>
+
+                {loading && aiResponse.length === 0 ?
+                    <p className="loading-text">Thinking...</p>
+                    :
+                    <div className="response-container">
+                        {aiResponse.map((line, index) => (
+                            <p key={index} className="response-text">
+                                {line}
+                            </p>
+                        ))}
                     </div>
-                )}
+                }
+
+                <div className="history-container">
+                    <h2 className="history-heading">Recent Conversations</h2>
+                    {history.map((item, index) => (
+                        <div key={index} className="history-item">
+                            <p className="prompt-text"><strong>User:</strong> {item.prompt}</p>
+                            <p className="response-text"><strong>AI:</strong> {item.response.join(' ')}</p>
+                        </div>
+                    ))}
+                </div>
+
                 <Link className="backButton" to="/">
                     <FontAwesomeIcon icon={faHome} /> Back to Home
                 </Link>
-            </form>
+            </div>
         </div>
     );
-}
+};
+
+export default AiwithText;

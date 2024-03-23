@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faBell, faScrewdriverWrench, faUser } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { Link } from 'react-router-dom';
+
 import './ChatBox.css'; // Import the CSS file for ChatBox styling
 
 function App() {
