@@ -1,0 +1,67 @@
+[
+  {
+    "event_name": "Textiles Innovation Challenge",
+    "event_location": null,
+    "event_date": null,
+    "event_time": null,
+    "event_restrictions": "Open for Early startups",
+    "last_date_for_signing_up": null
+  },
+  {
+    "event_name": "ICDAR 2024",
+    "event_location": null,
+    "event_date": null,
+    "event_time": null,
+    "event_restrictions": null,
+    "last_date_for_signing_up": null
+  },
+  {
+    "event_name": "National Level Project Competition-2024",
+    "event_location": "Bangalore Institute of Technology",
+    "event_date": "13th April 2024",
+    "event_time": "Not specified in the given context",
+    "event_restrictions": "Not specified in the given context",
+    "last_date_for_signing_up": "Not specified in the given context"
+  },
+  {
+    "event_name": "MahilAI Club Recruitment",
+    "event_location": "Online",
+    "event_date": "Not specified",
+    "event_time": "Not specified",
+    "event_restrictions": "Open to all RR and EC students",
+    "last_date_for_signing_up": "Not specified",
+    "event_description": "MahilAI is a tech club at PES University that focuses on using AI to improve women's safety. We are looking for passionate and talented individuals to join our team and help us make a difference.",
+    "event_positions": [
+      "Research",
+      "Web Development",
+      "Content Writing",
+      "Logistics",
+      "Outreach",
+      "Design"
+    ],
+    "event_contact_info": "For more details on each position and how to apply, visit our Instagram page."
+  },
+  {
+    "event_name": "Graviton 2.0",
+    "event_location": "13th Floor, BE Block, PES University, Bangalore",
+    "event_date": "April 6 and 7, 2024",
+    "event_restrictions": "Open to all students",
+    "last_date_for_signing_up": "April 2nd, 2024, 11:59 PM"
+  },
+  {
+    "event_name": "Holi 2024",
+    "event_location": "PES University, Bangalore",
+    "event_date": "Monday March 25, 2024",
+    "event_time": "Not Provided",
+    "event_restrictions": "Not Provided, Possibly open for PES Students",
+    "last_date_for_signing_up": "Not Provided"
+  },
+  {
+    "event_name": "Dance Odyssey",
+    "event_location": "MRD Auditorium (RR Nagar Campus)",
+    "event_date": "25th March 2024",
+    "event_time": "4:00 pm onwards",
+    "event_restrictions": "Only for PES students",
+    "last_date_for_signing_up": "Not mentioned in the provided information"
+  }
+]
