@@ -24,7 +24,7 @@ my_mail.login(user, password)
 my_mail.select('Inbox')
 
 
-emails = ['bhatkaushik2004@gmail.com', 'jayanthramesh16.jr@gmail.com']
+emails = ['bhatkaushik2004@gmail.com']
 #These are modifications to simplify search
 # we can define "value" which is the mail id whose emails we want to parse through
 for mail_id in emails:
