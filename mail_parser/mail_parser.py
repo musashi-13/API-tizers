@@ -81,7 +81,7 @@ parsed_mails = []  # List to store parsed emails
 for mail_id in emails:
     key = 'FROM'
     value = mail_id
-    _, data = my_mail.search(None, key, value)
+    _, data = my_mail.search(None,'UNSEEN', key, value)
 
     # data variable is a list of numbers that represents the mail id of the mails received from 'value' amongst all mails in the inbox
     mail_id_list = data[0].split()
