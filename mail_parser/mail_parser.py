@@ -2,6 +2,55 @@ import imaplib
 import email
 import yaml
 
+def clean_subject(subject):
+    if subject.lower().startswith('fwd: '):
+        return subject[5:].lstrip()  # Remove "Fwd:" and any leading whitespace
+    return subject
+
+def get_email_body(msg):
+    body = ""
+    if msg.is_multipart():
+        for part in msg.walk():
+            content_type = part.get_content_type()
+            if content_type == 'text/plain':
+                body += part.get_payload(decode=True).decode()
+    else:
+        body = msg.get_payload(decode=True).decode()
+    return body.strip()
+
+def clean_email_body(body):
+   # Initialize flags for sections to ignore
+    ignore_sections = ['From:', 'To:', 'Subject: Requesting app and mail notification', '-- ']
+
+    # Split the body into lines
+    body_lines = body.splitlines()
+
+    # Initialize a list to store clean lines
+    clean_lines = []
+
+    # Flag to ignore lines within unwanted sections
+    ignore_line = False
+
+        # Iterate through each line in the body
+    for line in body_lines:
+        # Check if the line starts with any of the ignore sections
+        if any(line.startswith(section) for section in ignore_sections):
+            ignore_line = True
+        elif ignore_line and line.strip() == '':
+            # If it's an empty line after an ignored section, reset the ignore flag
+            ignore_line = False
+        elif not ignore_line:
+            # Ignore lines containing "Forwarded message" and similar patterns
+            if 'Forwarded message' not in line:
+                if line.strip():
+                    clean_lines.append(line)
+
+    # Join the clean lines to form the cleaned body
+    cleaned_body = '\n'.join(clean_lines)
+
+    return cleaned_body.strip()
+
+
 #loading the credentials.yml file
 with open("credentials.yml") as f:
     content = f.read()
@@ -49,16 +98,19 @@ for mail_id in emails:
 
     for msg in msgs[::-1]:
         for response_part in msg:
-            if type(response_part) is tuple:
-                my_msg = email.message_from_bytes((response_part[1]))
+            if isinstance(response_part,tuple):
+                my_msg = email.message_from_bytes(response_part[1])
+                subject = my_msg['subject']
+                cleaned_subject = clean_subject(subject)
+                body = get_email_body(my_msg)
+
+                # Clean email body using custom logic
+                cleaned_body = clean_email_body(body)
+
+                # Print only subject and cleaned body without additional information
                 print("____________________")
-                print("subj : ",my_msg['subject'])
-                print("from : ",my_msg['from'])
-                print("body : ")
-                for part in my_msg.walk():
-                    print(part.get_content_type())
-                    if part.get_content_type() == 'text/plain':
-                        print(part.get_payload())
+                print("Subject: " , cleaned_subject)
+                print(cleaned_body)
 
 my_mail.close()
 my_mail.logout()
