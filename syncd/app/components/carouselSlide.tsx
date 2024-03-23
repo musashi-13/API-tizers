@@ -44,7 +44,6 @@ export default function CarouselSlide(item: EventItem) {
     }, [item.eventImage]);
     return (
         <div className="flex" style={{zIndex: 0, background: `linear-gradient(to right, rgb(0,0,0,1) -400px, ${mainColor} 400px)`, height: "310px"}}>
-            
             <div className="flex p-4 pl-12 flex-col" style={{width: "50em"}}>
                 <h1 className="text-white text-3xl font-semibold pb-4">{item.eventName}</h1>
                 <div className="flex items-center gap-2">

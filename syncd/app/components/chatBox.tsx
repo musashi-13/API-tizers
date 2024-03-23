@@ -21,7 +21,7 @@ export default function AiwithText() {
 
     const loadKnowledgeBase = async () => {
         try {
-            const response = await fetch('./ok.txt');
+            const response = await fetch('./data.json');
             const knowledge = await response.text();
             setKnowledgeBase(knowledge);
         } catch (error) {

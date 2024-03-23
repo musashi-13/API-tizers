@@ -14,7 +14,7 @@ export default function SignUp() {
     const [errMsg, setErrMsg] = useState('')
     const [isLoading, setIsLoading] = useState(false)
     const router = useRouter();
-
+    
     const handleSubmit = async (e: any) => {
         e.preventDefault();
         setIsLoading(true);
@@ -31,6 +31,7 @@ export default function SignUp() {
             if (response.ok) {
                 const data = await response.json();
                 console.log(data);
+                sessionStorage.setItem('isLoggedIn', 'true');
                 router.push('/selectcollege');
             } else {
                 setIsLoading(false);

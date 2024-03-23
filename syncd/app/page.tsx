@@ -9,7 +9,18 @@ export default function Home() {
   
   const [clg, setCollege] = useState('');
   const searchParams = useSearchParams()
+
+  const pullData = async () => {
+    const response = await fetch('/api/chatboxdata', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        }});
+      }
+
+
   useEffect(() => {
+    pullData();
     if (searchParams){
       const college = searchParams.get('college')
       if (college){
