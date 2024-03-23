@@ -45,40 +45,38 @@ export default function CarouselSlide(item: EventItem) {
     return (
         <div className="flex" style={{background: `linear-gradient(to right, rgb(0,0,0,1) -400px, ${mainColor} 400px)`, height: "310px"}}>
             
-            <div className="flex p-4 pl-12 flex-col" style={{width: "72em"}}>
-                <h1 className="text-white text-3xl font-semibold">{item.eventName}</h1>
-                <p style={{color: "rgb(255, 255, 255, 0.8)"}}>
+            <div className="flex p-4 pl-12 flex-col" style={{width: "50em"}}>
+                <h1 className="text-white text-3xl font-semibold pb-4">{item.eventName}</h1>
+                <div className="flex items-center gap-2">
                     <FontAwesomeIcon icon={faCalendarDays}/>
-                    &nbsp;{item.eventDate}&nbsp;&nbsp;&nbsp;
+                    <p className="pr-2">{item.eventDate}</p>
                     <FontAwesomeIcon icon={faClock}/>
-                    &nbsp;{item.eventTime}&nbsp;&nbsp;&nbsp;
+                    <p className="pr-2">{item.eventTime}</p>
                     <FontAwesomeIcon icon={faLocationDot}/>
-                    &nbsp;{item.eventLoc}
-                </p>
-                <p style={{color: "rgb(255, 255, 255, 0.8)", width: "80%"}}>{item.eventDesc}</p>
-                <button>
-                    <a style={{ textDecoration: "none" }} href='https://www.google.com' target="_blank" rel="noreferrer">
-                        Register Now! <FontAwesomeIcon icon={faArrowUpRightFromSquare} size='xs'/>
-                    </a>
-                </button>
-                <button>
-                    <a style={{ textDecoration: "none" }} href='www.google.com' target="_blank" rel="noreferrer">
-                        Instagram <FontAwesomeIcon icon={faArrowUpRightFromSquare} size='xs'/>
-                    </a>
-                </button>
+                    <p className="pr-2">{item.eventLoc}</p>
+                </div>
+                <p className="text-white text-opacity-80">{item.eventDesc}</p>
+                <div className="flex gap-4 py-4">
+                    <button>
+                        <a style={{ textDecoration: "none" }} href='https://www.google.com' target="_blank" rel="noreferrer">
+                            Register Now! <FontAwesomeIcon icon={faArrowUpRightFromSquare} size='xs'/>
+                        </a>
+                    </button>
+                    <button>
+                        <a style={{ textDecoration: "none" }} href='www.google.com' target="_blank" rel="noreferrer">
+                            Instagram <FontAwesomeIcon icon={faArrowUpRightFromSquare} size='xs'/>
+                        </a>
+                    </button>
+                </div>
             </div>
             
             <div className="flex">
                 <div style={{
                     background: `linear-gradient(to right, ${mainColor}, rgb(0,0,0,0))`, 
-                    width:"120px", height:"310px",
-                    translate: "80px"
+                    width:"140px", height:"310px",
+                    translate: "52px"
                     }}></div>
                 <NextImage src={item.eventImage} alt="event" height={500} width={625}/>
-                <div style={{background: `linear-gradient(to right, rgb(0,0,0,0), ${mainColor})`, 
-                    width:"120px", height:"310px",
-                    translate: "-80px"
-                }}></div>
             </div>
         </div>
     )
