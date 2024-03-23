@@ -12,10 +12,10 @@ export default function NavBar() {
                 </svg>
                 </button>
                 <Link href='/login' className="text-primary-50 hover:text-white">
-                    Login
+                    Log in
                 </Link>
                 <Link href='/signup'className="bg-primary-200 outline-none focus:outline-none border border-dark-100 px-2 text-primary-300 rounded-lg hover:bg-white">
-                    SignUp
+                    Sign Up
                 </Link>
             </div>
        </nav> 
