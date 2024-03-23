@@ -1,0 +1,77 @@
+
+.loginPage{
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  align-items: center;
+  background-color: rgba(115, 169, 173, 0.7);
+}
+
+.form{
+  position: relative;
+  background-color: white;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2em;
+  padding-top: 1em;
+  margin: auto;
+}
+
+.backbutton{
+  color: rgb(96, 96, 96);
+}
+
+.Heading{
+  font-size: 30px;
+  padding-bottom: 0em;
+}
+
+.inputBox{
+  width: 250px;
+  margin: 0.4em;
+  font-size: 17px;
+  border: 1px solid  rgba(115, 169, 173, 1);
+  outline: 0 !important;
+  border-radius: 0.4em;
+  padding: 5px;
+}
+
+.forgotpass{
+  width: 250px;
+  text-align: end;
+  margin-top: 0px; 
+  font-size: 14px;
+}
+
+.loginbutton{
+  width: 270px;
+  margin-top: 1em;
+  font-size: 17px;
+  padding: 0.4rem;
+  border-radius: 0.4rem;
+  background-color: rgb(0, 193, 119);
+  color: white;
+  border: none;
+}
+
+.loginbutton:hover{
+  animation: pulse512 1.5s infinite;   
+}
+@keyframes pulse512 {
+  0% {
+      box-shadow: 0 0 0 0 #05bada66;
+  }
+  70% {
+      box-shadow: 0 0 0 10px rgb(218 103 68 / 0%);
+  }
+  100% {
+      box-shadow: 0 0 0 0 rgb(218 103 68 / 0%);
+  }
+}
+
+a{
+  text-decoration: none;
+  color: #0099ff;
+}

@@ -1,0 +1,60 @@
+.filterButtons{
+    padding: 0.5rem;
+    padding-left: 0.7em;
+    padding-right: 0.7em;
+    font-size: 1em;
+    background-color: white;
+    border-radius: 1rem;
+}
+
+.filterButtons:hover{
+    animation: pulse512 1.5s infinite;   
+}
+@keyframes pulse512 {
+    0% {
+        box-shadow: 0 0 0 0 #05bada66;
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgb(218 103 68 / 0%);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgb(218 103 68 / 0%);
+    }
+}
+
+.filterButtons.activeAll{
+    background-color: black;
+    color: white;
+}
+.filterButtons.active1{
+    background: linear-gradient(-45deg, #007bff, #002852);
+    color: white;
+}
+.filterButtons.active2{
+    background: linear-gradient(-45deg, #fd1d1d, #640101);
+    color: white;
+}
+.filterButtons.active3{
+    background: linear-gradient(-45deg, #17A2B8, #074953);
+    color: white;
+}
+.filterButtons.active4{
+    background: linear-gradient(-45deg, #bf1dff, #5d0281);
+    color: white;
+}
+.filterButtons.active5{
+    background: linear-gradient(-45deg, #1dff34, #02812c);
+    color: white;
+}
+.filterButtons.active6{
+    background: linear-gradient(-45deg, #ff1d7b, #81022f);
+    color: white;
+}
+.filterButtons.active7{
+    background: linear-gradient(-45deg, #fca446, #83481e);
+    color: white;
+}
+.filterButtons.active8{
+    background: #b71313;
+    color: white;
+}
