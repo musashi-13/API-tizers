@@ -32,9 +32,11 @@ collection = db[collection_name]
 with open('parsed_mails.json') as json_file:
     parsed_mails = json.load(json_file)
 
-# Insert parsed_mails data into MongoDB
-result = collection.insert_many(parsed_mails)
-print(f"Inserted {len(result.inserted_ids)} documents into the collection.")
+for parsed_mail in parsed_mails:
+    existing_doc = collection.find_one({"subject": parsed_mail["subject"]})
+    if existing_doc is None:
+        result = collection.insert_one(parsed_mail)
+        print(f"Inserted document with subject '{parsed_mail['subject']}'")
 
 # Close the MongoDB connection
 client.close()
