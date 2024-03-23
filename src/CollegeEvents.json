@@ -1,0 +1,155 @@
+[{
+  "eventName": "Hallothon 2023",
+  "eventFrom": "2023-11-22T08:00:00",
+  "eventTo": "2023-11-23T13:00:00",
+  "studentCriteria": "Open To All",
+  "regLink": "https://www.hallothon.com/?fbclid=PAAabn1Gk4OtChVaUkPY0t-GoneHNI8W4-PtKrhiztV1f3Q0sL72AhfNDqfwo",
+  "regStatus": "2023-11-23T23:00:00",
+  "eventDesc": "PES's biggest 24 hour hackathon",
+  "eventTheme": "Hackathon",
+  "like": 0
+},
+{
+  "eventName": "ICFI",
+  "eventFrom": "2024-02-01T09:00:00",
+  "eventTo": "2024-02-02T16:00:00",
+  "studentCriteria": "Open To All",
+  "regLink": "https://www.hallothon.com/?fbclid=PAAabn1Gk4OtChVaUkPY0t-GoneHNI8W4-PtKrhiztV1f3Q0sL72AhfNDqfwo",
+  "regStatus": "2023-11-22T23:00:00",
+  "eventDesc": "Research Paper",
+  "eventTheme": "Conference",
+  "like": 0
+},
+{
+  "eventName": "ISFCR",
+  "eventFrom": "2023-12-14T08:00:00",
+  "eventTo": "2023-12-15T12:00:00",
+  "studentCriteria": "PES only",
+  "regLink": "../noreg.html",
+  "regStatus": "2023-11-24T23:00:00",
+  "eventDesc": "Capture The Flag",
+  "eventTheme": "Hackathon",
+  "like":0
+},
+{
+  "eventName": "Navratri Utsav",
+  "eventFrom": "2023-12-18T16:00:00",
+  "eventTo": "2023-12-18T18:00:00",
+  "studentCriteria": "PES only",
+  "regLink": "../noreg.html",
+  "regStatus": "2023-10-16T23:00:00",
+  "eventDesc": "festival celebration",
+  "eventTheme": "Cultural",
+  "like": 0
+},
+{
+  "eventName": "Birds of a Feather",
+  "eventFrom": "2023-12-19T14:00:00",
+  "eventTo": "2023-12-20T16:00:00",
+  "studentCriteria": "PES only",
+  "regLink": "../noreg.html",
+  "regStatus": "2023-10-12T23:00:00",
+  "eventDesc": "Come speak your Heart Out",
+  "eventTheme": "OpenMic",
+  "like": 0
+},
+{
+  "eventName": "ISA Script Review",
+  "eventFrom": "2023-11-24T15:45:00",
+  "eventTo": "2023-11-24T16:30:00",
+  "studentCriteria": "PES only",
+  "regLink": "../noreg.html",
+  "regStatus": "2023-10-16T23:00:00",
+  "eventDesc": "To review your ISA Papers",
+  "eventTheme": "Academic",
+  "like": 0
+},
+{
+  "eventName": "Blockchain-3.0",
+  "eventFrom": "2023-10-28T08:30:00",
+  "eventTo": "2023-10-28T18:30:00",
+  "eventTheme": "Hackathon",
+  "eventDesc": "Basic block chain knowledge for problem solving",
+  "regLink": "https://forms.gle/M5QiozHXaSuLHAwW8",
+  "regStatus": "2023-10-24T23:59:59",
+  "studentCriteria": "Open to all",
+  "like": 0
+},
+{
+  "eventName": "Last Working Day ",
+  "eventFrom": "2023-11-24T00:00:00",
+  "eventTo": "2023-11-24T23:59:59",
+  "eventTheme": "ISA",
+  "eventDesc": "",
+  "regLink": "",
+  "regStatus": "",
+  "studentCriteria": "",
+  "like": 0
+},
+{
+  "eventName": "ISA-2",
+  "eventFrom": "2023-11-27T08:00:00",
+  "eventTo": "2023-11-27T10:15:00",
+  "eventTheme": "ISA",
+  "eventDesc": "",
+  "regLink": "",
+  "regStatus": "",
+  "studentCriteria": "",
+  "like": 0
+},
+{
+  "eventName": "ISA-2",
+  "eventFrom": "2023-11-28T08:00:00",
+  "eventTo": "2023-11-28T10:15:00",
+  "eventTheme": "ISA",
+  "eventDesc": "",
+  "regLink": "",
+  "regStatus": "",
+  "studentCriteria": "",
+  "like": 0
+},
+{
+  "eventName": "ISA-2",
+  "eventFrom": "2023-11-29T08:00:00",
+  "eventTo": "2023-11-29T10:15:00",
+  "eventTheme": "ISA",
+  "eventDesc": "",
+  "regLink": "",
+  "regStatus": "",
+  "studentCriteria": "",
+  "like": 0
+},
+{
+  "eventName": "ISA-2",
+  "eventFrom": "2023-11-30T08:00:00",
+  "eventTo": "2023-11-30T10:15:00",
+  "eventTheme": "ISA",
+  "eventDesc": "",
+  "regLink": "",
+  "regStatus": "",
+  "studentCriteria": "",
+  "like": 0
+},
+{
+  "eventName": "ISA-2",
+  "eventFrom": "2023-12-01T08:00:00",
+  "eventTo": "2023-12-01T10:15:00",
+  "eventTheme": "ISA",
+  "eventDesc": "",
+  "regLink": "",
+  "regStatus": "",
+  "studentCriteria": "",
+  "like": 0
+},
+{
+  "eventName": "Nil",
+  "eventFrom": "",
+  "eventTo": "",
+  "eventTheme": "",
+  "eventDesc": "",
+  "regLink": "",
+  "regStatus": "",
+  "studentCriteria": "",
+  "like": 0
+}
+]

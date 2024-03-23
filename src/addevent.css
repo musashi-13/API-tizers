@@ -1,0 +1,136 @@
+.event-container{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    background-color: rgba(115, 169, 173, 0.7);
+}
+
+.event-form.submitting {
+    height: 1em;
+    overflow: hidden;
+}
+
+.event-form.submitting label, input, select {
+    visibility: none;
+}
+
+.event-form.submitting h2{
+    visibility: hidden;
+}
+
+.event-form.submitting .event-button-container{
+    display: flex;
+    margin: 1.2em 8.5em;
+    gap: 1em;
+    justify-content: center;
+    position: absolute;
+    top: 0px;
+}
+
+.event-form{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 30%;
+    margin: auto;
+    padding: 1.5em;
+    border-radius: 1rem;
+    background-color: white;
+    overflow: hidden;
+    height: 40em;
+    transition: height 0.5s ease-in-out;
+}
+
+
+label{
+    visibility: visible;
+    margin: 0.2em;
+    font-size: 15px;
+}
+
+h2{
+    visibility: visible;
+    margin: 0em auto 0em auto;
+}
+
+
+input, select{
+    visibility: visible;
+    margin: 0.2rem;
+    padding: 0.3rem;
+    border: 1px solid black;
+    border-radius: 0.3rem;
+    font-size: 15px;
+    outline: none;
+}
+
+.info-text{
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    
+    position: absolute;
+    z-index: 10;
+}
+
+
+.info-bubble:hover + .info-text{
+    visibility: visible;
+}
+
+.date-time-container{
+    display: flex;
+    gap: 1em;
+}
+
+.event-button-container{
+    display: flex;
+    margin-top: 1em;
+    gap: 1em;
+    justify-content: center;
+}
+
+.event-button-container button{
+    font-size: 15px;
+    border: none;
+    padding: 0.4em 1em 0.4em 1em;
+    border-radius: 0.3em;
+    color: white;
+}
+
+.event-button-container button:hover{
+    animation: pulse512 1.5s infinite;   
+}
+
+@keyframes pulse512 {
+    0% {
+        box-shadow: 0 0 0 0 #05bada66;
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgb(218 103 68 / 0%);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgb(218 103 68 / 0%);
+    }
+}
+
+#Add{
+    background-color: rgb(0, 193, 119);
+}
+#Clear{
+    background-color: rgb(255, 70, 70);
+}
+
+#Confirm{
+    background-color: rgb(0, 193, 119);
+}
+#Cancel{
+    background-color: rgb(255, 70, 70);
+}
+
+
