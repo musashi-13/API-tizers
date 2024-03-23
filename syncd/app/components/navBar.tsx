@@ -11,7 +11,7 @@ export default function NavBar() {
                 </svg>
                 </button>
                 <button className="bg-primary-200 border border-dark-100 px-2 text-primary-300 rounded-lg hover:bg-white">
-                    Chat
+                    Login / SignUp
                 </button>
             </div>
        </nav> 

@@ -1,11 +1,11 @@
-
-"use client"
-import React, { useState } from 'react';
 import Carousel from 'react-material-ui-carousel'
 import { Paper, Button } from '@mui/material'
-    
-export default function CarouselBox() {
-    const [collegeName, setCollegeName] = useState("PES University")
+
+interface CarouselBoxProps {
+    collegeName: string;
+  }
+
+export default function CarouselBox(props: CarouselBoxProps) {
     var items = [
         {
             name: "Random Name #1",
@@ -19,7 +19,7 @@ export default function CarouselBox() {
 
     return(
         <div>
-            <p className='text-primary-300 px-4 py-2 text-xl font-semibold'>Latest events in {collegeName}</p>
+            <p className='text-primary-300 px-4 py-2 text-xl font-semibold'>Latest events in {props.collegeName}</p>
             <Carousel sx={{width: "90vw", margin: "auto"}} autoPlay={true} swipe={true} indicators={true} navButtonsAlwaysVisible={true} cycleNavigation={true} animation='slide'>
             {
                 items.map( (item, i) => 
