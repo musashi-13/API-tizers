@@ -16,6 +16,7 @@ export default function CarouselBox(props: CarouselBoxProps) {
             description: "Hello World!"
         }
     ]
+    
 
     return(
         <div>
