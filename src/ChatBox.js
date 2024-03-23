@@ -11,7 +11,6 @@ const AiwithText = () => {
     const [search, setSearch] = useState('');
     const [aiResponse, setResponse] = useState('');
     const [loading, setLoading] = useState(false);
-    
 
     async function aiRun() {
         setLoading(true);
@@ -33,26 +32,39 @@ const AiwithText = () => {
         aiRun();
     }
 
-
     return (
-        <div>
-            <div style={{ display: 'flex' }}>
-                <input placeholder='Chat using Generative AI' onChange={(e) => handleChangeSearch(e)} />
-                <button style={{ marginLeft: '20px' }} onClick={() => handleClick()}>Search</button>
-            </div>
+        <div className="container">
+            <h1 className="heading">Ask anything to our AI ChatBot</h1>
+            <div className="content">
+                <div className="input-container">
+                    <input className="input-field" placeholder='Chat using Generative AI' onChange={(e) => handleChangeSearch(e)} />
+                    <button className="search-button" onClick={() => handleClick()}>Search</button>
+                </div>
 
-            {
-                loading == true && (aiResponse == '') ?
-                    <p style={{ margin: '30px 0' }}>Loading ...</p>
-                    :
-                    <div style={{ margin: '30px 0' }}>
-                        <p>{aiResponse}</p>
-                    </div>
-            }
-            <Link className="backButton" to="/">
+                {
+    loading === true && (aiResponse === '') ?
+        <p className="loading-text">Loading ...</p>
+        :
+        <div className="response-container">
+            {aiResponse.split('\n').map((paragraph, index) => (
+                <p key={index} className="response-text">
+                    {paragraph.split('**').map((part, i) => {
+                        if (i % 2 === 0) {
+                            return part;
+                        } else {
+                            return <strong key={i}>{part}</strong>;
+                        }
+                    })}
+                </p>
+            ))}
+        </div>
+}
+                <Link className="backButton" to="/">
                     <FontAwesomeIcon icon={faHome} /> Back to Home
-            </Link>
+                </Link>
+            </div>
         </div>
     );
 };
-export default AiwithText
+
+export default AiwithText;
