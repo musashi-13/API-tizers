@@ -32,8 +32,10 @@ collection = db[collection_name]
 with open('events.json') as json_file:
     parsed_events = json.load(json_file)
 
-result = collection.insert_many(parsed_events)
-print(f"Inserted {len(result.inserted_ids)} documents into the collection.")
+for parsed_event in parsed_events:
+    existing_doc = collection.find_one({"event_name": parsed_event.get("event_name")})
+    if existing_doc is None:
+        result = collection.insert_one(parsed_event)
 
 # Close the MongoDB connection
 client.close()

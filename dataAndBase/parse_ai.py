@@ -30,7 +30,7 @@ if start_index != -1 and end_index != -1:
     ans = ans[start_index + len('```json'):end_index]
 
 with open('generated_text.txt', 'w') as file:
-    file.write(ans)
+    file.write(ans)     #Not exactly necessary but for debugging purposes
 
 # Parse the modified text as JSON data
 json_data = json.loads(ans)
