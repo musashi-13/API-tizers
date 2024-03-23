@@ -13,7 +13,7 @@ const config: Config = {
         primary: {
           50: '#F8F6F4', //background
           100: '#2D9596', //navbar
-          200: '#DCF2F1', //elements
+          200: '#C0FAF7', //elements
           300: '#0F0F0F'  //darkmode
         },
         light: {
