@@ -61,12 +61,12 @@ export default function SignUp() {
         <Image src='/logo sm.png' alt='logo' width={80} height={80} priority={true}/>
         <p className="text-primary-300 py-4 text-lg">Create your account now!</p>
         <form onSubmit={handleSubmit} className="flex items-center flex-col gap-4">
-          <TextField id="email" sx={{width: "18em"}} label="Email Address" variant="standard" color="primary" InputLabelProps={{ shrink: true }} value={email} onChange={(e) => setEmail(e.target.value)} />
-        <TextField id="password" helperText="Atleast 8 letters including Upper, Lower, Special and Number" sx={{width: "18em"}} label="Password" variant="standard" color="primary" InputLabelProps={{ shrink: true }} value={password} onChange={(e) => setPassword(e.target.value)} />
-          <TextField id="reEnterPassword" sx={{width: "18em"}} label="Re Enter Password" variant="standard" color="primary" InputLabelProps={{ shrink: true }} value={reEnterPassword} onChange={(e) => setReEnterPassword(e.target.value)} />
-          <p className="text-primary-300 text-xs">Already have an account? <Link href='/login'><u>Login</u></Link></p>
-          <p style={{width: "14rem"}} className="text-red-600 text-sm text-right">{errMsg && <FontAwesomeIcon icon={faWarning} size="xs" style={{marginRight: "0.3rem"}}/>}{errMsg}</p>
-          <button style={{width: "18rem"}} type="submit" className="btn-primary text-primary-300 border border-primary-300 px-4 py-2 rounded-lg">{isLoading ? (<FontAwesomeIcon icon={faSpinner} spin size="sm" />) : ("Sign Up")}</button>
+            <TextField id="email" sx={{width: "18em"}} label="Email Address" variant="standard" color="primary" InputLabelProps={{ shrink: true }} value={email} onChange={(e) => setEmail(e.target.value)} />
+            <TextField id="password" helperText="Atleast 8 letters including Upper, Lower, Special and Number" sx={{width: "18em"}} label="Password" variant="standard" color="primary" InputLabelProps={{ shrink: true }} value={password} onChange={(e) => setPassword(e.target.value)} />
+            <TextField id="reEnterPassword" sx={{width: "18em"}} label="Re Enter Password" variant="standard" color="primary" InputLabelProps={{ shrink: true }} value={reEnterPassword} onChange={(e) => setReEnterPassword(e.target.value)} />
+            <p className="text-primary-300 text-xs">Already have an account? <Link href='/login'><u>Login</u></Link></p>
+            <p style={{width: "14rem"}} className="text-red-600 text-sm text-right">{errMsg && <FontAwesomeIcon icon={faWarning} size="xs" style={{marginRight: "0.3rem"}}/>}{errMsg}</p>
+            <button style={{width: "18rem"}} type="submit" className="btn-primary text-primary-300 border border-primary-300 px-4 py-2 rounded-lg">{isLoading ? (<FontAwesomeIcon icon={faSpinner} spin size="sm" />) : ("Sign Up")}</button>
         </form>
       </div>
     </div>

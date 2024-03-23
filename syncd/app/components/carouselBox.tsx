@@ -37,12 +37,12 @@ export default function CarouselBox(props: CarouselBoxProps) {
     
 
     return(
-        <div>
+        <div style={{zIndex: "5"}}>
             <p className='text-primary-300 px-4 py-2 text-xl font-semibold'>Latest events in {props.collegeName}</p>
-            <Carousel sx={{width: "90vw", margin: "auto"}} autoPlay={true} swipe={true} indicators={true} navButtonsAlwaysVisible={true} cycleNavigation={true} animation='slide'>
+            <Carousel sx={{width: "90vw", margin: "auto", zIndex: "3"}} autoPlay={true} swipe={true} indicators={true} navButtonsAlwaysVisible={true} cycleNavigation={true} animation='slide'>
             {
                 items.map( (item, i) => 
-                <div key={i}>
+                <div className='z-4' key={i}>
                     <CarouselSlide {...item}/>
                 </div> 
             )}

@@ -20,8 +20,10 @@ export default function Home() {
   return (
       <main className="bg-primary-50 dark:bg-primary-50 w-lwv h-lvh">
           <NavBar />
+          <div className="z-1">
           <CarouselBox collegeName={clg} />
-          <div className="fixed bottom-4 right-4">
+          </div>
+          <div className="fixed bottom-4 right-4" style={{zIndex: "25"}}>
             <AiwithText/>
           </div>
       </main>

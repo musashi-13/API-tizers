@@ -1,5 +1,4 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import bcrypt from 'bcrypt';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     if (req.method === 'POST') {
@@ -15,13 +14,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             if (!existingUser) {
                 return res.status(400).json({ success: false, message: 'userNotFound' });
             }
-            const passwordMatch = await bcrypt.compare(password, existingUser.password);
-            if (!passwordMatch) {
+            if (existingUser.password !== password) {
                 return res.status(400).json({ success: false, message: 'invalidPassword' });
             }
             res.status(201).json({ success: true, message: 'User logged in successfully'});
         } catch (error) {
-            console.error('Error inserting user data:', error);
+            console.error('Error checking for data', error);
             res.status(500).json({ success: false, message: 'failLogin' });
         } finally {
             await client.close();

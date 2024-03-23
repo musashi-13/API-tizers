@@ -58,7 +58,7 @@ export default function AiwithText() {
     }
 
     return (
-        <div>
+        <div style={{zIndex: 20}}>
             {viewChat ? (
                 <div className="flex flex-col gap-4 bg-white text-primary-300 rounded-xl p-4 shadow-lg" style={{width: "50em"}}>
                     <div className='flex justify-between mx-4'>
