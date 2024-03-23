@@ -36,7 +36,6 @@ for parsed_mail in parsed_mails:
     existing_doc = collection.find_one({"subject": parsed_mail["subject"]})
     if existing_doc is None:
         result = collection.insert_one(parsed_mail)
-        print(f"Inserted document with subject '{parsed_mail['subject']}'")
 
 # Close the MongoDB connection
 client.close()
