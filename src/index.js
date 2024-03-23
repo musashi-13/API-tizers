@@ -7,6 +7,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { Routes, Route } from 'react-router-dom';
 import Login from './login';
 import AddEvent from './addEvent';
+import ChatBox from './ChatBox';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -15,6 +16,7 @@ root.render(
       <Route path='/' element={<App/>} />
       <Route path='/login' element={<Login/>} />
       <Route path='/addevent' element={<AddEvent/>} />
+      <Route path='/ChatBox' element={<ChatBox/>}/>
     </Routes>
   </BrowserRouter>
   );
