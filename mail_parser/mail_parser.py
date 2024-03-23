@@ -1,6 +1,7 @@
 import imaplib
 import email
 import yaml
+import json
 
 def clean_subject(subject):
     if subject.lower().startswith('fwd: '):
@@ -19,7 +20,7 @@ def get_email_body(msg):
     return body.strip()
 
 def clean_email_body(body):
-   # Initialize flags for sections to ignore
+    # Initialize flags for sections to ignore
     ignore_sections = ['From:', 'To:', 'Subject: Requesting app and mail notification', '-- ']
 
     # Split the body into lines
@@ -31,7 +32,7 @@ def clean_email_body(body):
     # Flag to ignore lines within unwanted sections
     ignore_line = False
 
-        # Iterate through each line in the body
+    # Iterate through each line in the body
     for line in body_lines:
         # Check if the line starts with any of the ignore sections
         if any(line.startswith(section) for section in ignore_sections):
@@ -51,54 +52,55 @@ def clean_email_body(body):
     return cleaned_body.strip()
 
 
-#loading the credentials.yml file
+# loading the credentials.yml file
 with open("credentials.yml") as f:
     content = f.read()
 
-#loading the contents of the file
-my_credentials = yaml.load(content, Loader = yaml.FullLoader)
-#fetching the user and password using exact keywords
+# loading the contents of the file
+my_credentials = yaml.load(content, Loader=yaml.FullLoader)
+# fetching the user and password using exact keywords
 user, password = my_credentials["user"], my_credentials["password"]
 
-#URL for imap connection
-imap_url ='imap.gmail.com'
+# URL for imap connection
+imap_url = 'imap.gmail.com'
 
-#Connection to Gmail using SSl
+# Connection to Gmail using SSL
 my_mail = imaplib.IMAP4_SSL(imap_url)
 
-#Log in using your credentials
+# Log in using your credentials
 my_mail.login(user, password)
 
-#Select the inbox to fetch messages
+# Select the inbox to fetch messages
 my_mail.select('Inbox')
 
-
 emails = ['bhatkaushik2004@gmail.com']
-#These are modifications to simplify search
+parsed_mails = []  # List to store parsed emails
+
+# These are modifications to simplify search
 # we can define "value" which is the mail id whose emails we want to parse through
 for mail_id in emails:
     key = 'FROM'
     value = mail_id
-    _, data = my_mail.search(None , key , value)
+    _, data = my_mail.search(None, key, value)
 
-    #data variable is a list of numbers that represents the mail id of the mails recieved from 'value' amongst all mails in the inbox
+    # data variable is a list of numbers that represents the mail id of the mails received from 'value' amongst all mails in the inbox
     mail_id_list = data[0].split()
 
-    msgs = [] #empty list to capture all messages
+    msgs = []  # empty list to capture all messages
 
     for num in mail_id_list:
-        typ , data = my_mail.fetch(num,'(RFC822)')  #to extract every part of the message including the body and header
+        typ, data = my_mail.fetch(num, '(RFC822)')  # to extract every part of the message including the body and header
         msgs.append(data)
-        
+
     '''
     In a multipart email, email.message.Message.get_payload() returns a list with one item for each part
     The easiest way is to walk the message and get the payload on each part
     '''
-    #Note that each message has 
+    # Note that each message has
 
     for msg in msgs[::-1]:
         for response_part in msg:
-            if isinstance(response_part,tuple):
+            if isinstance(response_part, tuple):
                 my_msg = email.message_from_bytes(response_part[1])
                 subject = my_msg['subject']
                 cleaned_subject = clean_subject(subject)
@@ -107,10 +109,26 @@ for mail_id in emails:
                 # Clean email body using custom logic
                 cleaned_body = clean_email_body(body)
 
-                # Print only subject and cleaned body without additional information
-                print("____________________")
-                print("Subject: " , cleaned_subject)
-                print(cleaned_body)
+                parsed_email = {
+                    "subject": cleaned_subject,
+                    "body": cleaned_body
+                }
+
+                # Store each parsed email dictionary in the list
+                parsed_mails.append(parsed_email)
+
+# Print or use parsed emails as needed
+'''
+i = 1
+for parsed_mail in parsed_mails:
+    print("Mail",i,"\n")
+    i+=1
+    print(parsed_mail)
+    print("\n\n")
+'''
+
+with open('parsed_mails.json', 'w') as json_file:
+    json.dump(parsed_mails, json_file)
 
 my_mail.close()
 my_mail.logout()
