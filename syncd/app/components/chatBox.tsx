@@ -43,9 +43,9 @@ export default function AiwithText() {
                 if (i % 2 === 0) {
                     return part;
                 } else {
-                    return <strong key={i}>{part}</strong>;
+                    return `**${part}**`; // Convert JSX elements to strings
                 }
-            });
+            }).join('');
         });
         setResponse(text);
         setLoading(false);

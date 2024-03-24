@@ -1,6 +1,8 @@
+'use client'
 import Carousel from 'react-material-ui-carousel'
-import { Paper, Button } from '@mui/material'
 import CarouselSlide from './carouselSlide';
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 
 interface CarouselBoxProps {
     collegeName: string;
@@ -15,7 +17,20 @@ interface EventItem {
     eventTime: string;
     eventLoc: string;
 }
-export default function CarouselBox(props: CarouselBoxProps) {
+export default function CarouselBox() {
+
+    const [clg, setCollege] = useState('');
+    const searchParams = useSearchParams()
+
+    useEffect(() => {
+        if (searchParams){
+        const college = searchParams.get('college')
+        if (college){
+            setCollege(college)
+        }
+        }
+    }, [searchParams]);
+
     const items = [
         {
             eventName: "Diplomat Wars 4.0",
@@ -38,7 +53,7 @@ export default function CarouselBox(props: CarouselBoxProps) {
 
     return(
         <div style={{zIndex: "5"}}>
-            <p className='text-primary-300 pl-12 py-2 text-xl font-semibold'>Latest events in {props.collegeName}</p>
+            <p className='text-primary-300 pl-12 py-2 text-xl font-semibold'>Latest events in {clg}</p>
             <Carousel sx={{width: "90vw", margin: "auto", zIndex: "3"}} autoPlay={true} swipe={true} indicators={true} navButtonsAlwaysVisible={true} cycleNavigation={true} animation='slide'>
             {
                 items.map( (item, i) => 
