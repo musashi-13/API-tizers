@@ -6,7 +6,7 @@ export default function EventCards() {
     const [events, setEvents] = useState([]);
     const [showLiked, setShowLiked] = useState(false);
 
-    const toggleShowLiked = () => {
+    const toggleShowLiked = (e: any) => {
         setShowLiked(!showLiked);
     };
 
@@ -110,7 +110,11 @@ export default function EventCards() {
                         || (isActive7 && event.event_category==="exams")
                         || (isActive8 && event.event_category==="marathons")) ? (
                         <div key={index} style={{width: "21em"}} className={`p-4 rounded-xl shadow-lg ${(categoryColors as any)[event.event_category] || categoryColors.other}`}>   
-                            <p className="font-bold text-xl pb-4">{event.event_name}</p>
+                            <div>
+                                <p className="font-bold text-xl pb-4">{event.event_name}</p>
+                                <button className={`heartButton ${showLiked ? 'liked' : ''}`} onClick={() => (setShowLiked)}>
+                                    <FontAwesomeIcon icon={faHeart} size="2xl" />
+                                </button></div>
                             {event.event_location &&< p><FontAwesomeIcon icon={faLocationDot} />  {event.event_location}</p> }
                             <div >{event.event_date && <p><FontAwesomeIcon icon={faCalendarDay} /> {event.event_date}</p>}{event.event_time && <p><FontAwesomeIcon icon={faClock} /> {event.event_time}</p>}</div>
                             <p className="pt-4"><b>Restrictions: {event.event_restrictions || 'Not specified'}</b></p>
