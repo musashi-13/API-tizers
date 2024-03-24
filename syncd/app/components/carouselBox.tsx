@@ -33,20 +33,20 @@ export default function CarouselBox() {
 
     const items = [
         {
-            eventName: "Diplomat Wars 4.0",
-            eventDesc: "Diplomat Wars is the PES MUN Society 's event that de-constructs the skill set of diplomacy and provide a glimpse of the enthralling World of Model UNs. Whether you are a seasoned MUNer or just curious, this is your chance to showcase and polish your analytical and soft skills!",
+            eventName: "NexGen",
+            eventDesc: "24 hour hackathon by Nexus Club under the CSE department.",
             eventImage: "/diplomatwars.png",
-            eventDate: "3rd Feb - 4th Feb 2024",
+            eventDate: "6th Apr - 7th Apr 2024",
             eventTime: "8 AM",
-            eventLoc: "MRD Auditorium"
+            eventLoc: "MRD Auditorium, RR campus, PES university"
         },
         {
-            eventName: "Otakuiz",
-            eventDesc: "Anime lovers and Quizzing enthusiasts join us, QQC on 30th January,2024 for an unforgettable experience as we challenge your quick thinking and knowledge on all things anime. Get a chance to win cash prizes upto 3000 rupees!",
+            eventName: "Graviton 2.0",
+            eventDesc: "First 24 hour Quantum hackathon by QForest, the Quantum Club of PES University",
             eventImage: "/animequiz.png",
-            eventDate: "30th Jan 2024",
-            eventTime: "4 PM",
-            eventLoc: "3rd Floor Seminar Hall, BE Block"
+            eventDate: "6th Apr - 7th Apr 202",
+            eventTime: "8 AM",
+            eventLoc: "13rd Floor, BE Block"
         }
     ]
     
