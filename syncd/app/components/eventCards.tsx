@@ -6,7 +6,7 @@ export default function EventCards() {
     const [events, setEvents] = useState([]);
     const [showLiked, setShowLiked] = useState(false);
 
-    const toggleShowLiked = (e: any) => {
+    const toggleShowLiked = () => {
         setShowLiked(!showLiked);
     };
 
