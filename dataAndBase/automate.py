@@ -8,7 +8,7 @@ def run_scripts():
     subprocess.run(["python", "final_insert.py"])
 
 # Schedule the scripts to run every hour
-schedule.every(20).seconds.do(run_scripts)
+schedule.every(6).hours.do(run_scripts)
 
 while True:
     schedule.run_pending()
