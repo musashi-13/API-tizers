@@ -1,120 +1,156 @@
 
 [
-  {
-    "event_name": "Hackfest 2024",
-    "event_location": "NMAM Institute of Technology, Karkala",
-    "event_date": "April 5 to 7",
-    "event_time": "36-hour",
-    "event_restrictions": "Open for all college students",
-    "last_date_for_signing_up": "Not mentioned",
-    "event_registration_link": "https://www.hackfest.dev/register"
-  },
-  {
-    "event_name": "Hackathon by News1st Channel | Cyber Crimes Conclave",
-    "event_location": null,
-    "event_date": "February 28th and 29th",
-    "event_time": null,
-    "event_restrictions": "Only for PES University students",
-    "last_date_for_signing_up": "February 20th",
-    "event_registration_link": "https://forms.gle/K8oWeuxHpZSn2RQS8"
-  },
-  {
-    "event_name": "Magnovite 2024",
-    "event_location": "Christ (Deemed to be University), Kengeri Campus, Bengaluru",
-    "event_date": "February 12th & 13th 2024",
-    "event_time": "Not mentioned",
-    "event_restrictions": "All Institutions are welcome to participate",
-    "last_date_for_signing_up": "Not mentioned",
-    "event_registration_link": "https://forms.gle/FiH6b69LfJ21bAWg8"
-  },
-  {
-    "event_name": "IIT Madras Shaastra Techathon 2024",
-    "event_location": "IIT Madras",
-    "event_date": null,
-    "event_time": null,
-    "event_restrictions": "Open to all students of institutional subscribers of the Shaastra magazine.",
-    "last_date_for_signing_up": null,
-    "event_registration_link": "https://apexsubs.com"
-  },
-  {
-    "event_name": "PES MUN Society Club Recruitments",
-    "event_location": "PES University RR Campus",
-    "event_date": null,
-    "event_time": null,
-    "event_restrictions": "open for all students in your department",
-    "last_date_for_signing_up": "12th March",
-    "event_registration_link": "https://forms.gle/1eNC1u2JQNdPrbFU8"
-  },
-  {
-    "event_name": "Hack for Humanity",
-    "event_location": "Virtual",
-    "event_date": null,
-    "event_time": null,
-    "event_restrictions": "Open for all",
-    "last_date_for_signing_up": null,
-    "event_registration_link": null
-  },
-  {
-    "event_name": "Textiles Innovation Challenge",
-    "event_location": "Online",
-    "event_date": null,
-    "event_time": null,
-    "event_restrictions": null,
-    "last_date_for_signing_up": null,
-    "event_registration_link": "https://www.startupindia.gov.in/content/sih/en/ams-application/challenge.html?applicationId=65da0ef2e4b06352cbeffed3"
-  },
-  {
-    "event_name": "ICDR 2024",
-    "event_location": "https://ilocr.iiit.ac.in/icdar_2024_hwd/schedule.html",
-    "event_date": null,
-    "event_time": null,
-    "event_restrictions": null,
-    "last_date_for_signing_up": null,
-    "event_registration_link": null
-  },
-  {
-    "event_name": "National Level Project Competition-2024",
-    "event_location": "Bangalore Institute of Technology",
-    "event_date": "13th April 2024",
-    "event_time": "not provided",
-    "event_restrictions": "open for all students",
-    "last_date_for_signing_up": "not provided",
-    "event_registration_link": "not provided"
-  },
-  {
-    "event_name": "MahilAI Club Recruitment",
-    "event_location": "Online",
-    "event_date": "Not specified",
-    "event_time": "Not specified",
-    "event_restrictions": "Open to all genders who share the vision of advancing women's safety through AI",
-    "last_date_for_signing_up": "Not specified",
-    "event_registration_link": "https://forms.gle/GYrfigQguHXCed979"
-  },
-  {
-    "event_name": "Graviton 2.0 - Hackathon!!",
-    "event_location": "13th Floor, BE Block, PES University, Bangalore",
-    "event_date": "April 6 and 7, 2024",
-    "event_time": "24 hours",
-    "event_restrictions": "Open to all engineering students",
-    "last_date_for_signing_up": "April 2nd, 2024, 11:59PM",
-    "event_registration_link": "https://docs.google.com/forms/d/e/1FAIpQLSde6WqXNx-LNA3biNnxDZnQEkGvLUoHOakjA45czVj7FKI3qA/viewform?usp=sf_link"
-  },
-  {
-    "event_name": "Holi 2024",
-    "event_location": "PES University, Bangalore",
-    "event_date": "Monday March 25, 2024",
-    "event_time": "All day",
-    "event_restrictions": "Only for PES students",
-    "last_date_for_signing_up": "Not mentioned",
-    "event_registration_link": "Not mentioned"
-  },
-  {
-    "event_name": "Dance Odyssey",
-    "event_location": "MRD Auditorium (RR Nagar Campus)",
-    "event_date": "25th March 2024",
-    "event_time": "4:00 pm onwards",
-    "event_restrictions": "Open only for PES University students",
-    "last_date_for_signing_up": null,
-    "event_registration_link": "https://forms.gle/6kAvWbUMGr6epvHR6"
+{
+"Event_name": "Hackfest 2024: National Level Hackathon at Nitte",
+"Event_location": "NMAM Institute of Technology, Karkala",
+"Event_date": "April 5 to 7",
+"Event_time": null,
+"Event_restrictions": null,
+"Event_category": "hackathons",
+"Last_date_for_signing_up": null,
+"Event_registration_link": "https://www.hackfest.dev/register"
+},
+{
+"event_name": "Hackathon by News1st Channel | Cyber Crimes Conclave",
+"event_location": "IIsc. Campus, Bangalore",
+"event_date": "28th and 29th Feb, 2024",
+"event_time": "Not Mentioned",
+"event_restrictions": "Only for PES University Students (RR and EC campus)",
+"event_category": "hackathons",
+"last_date_for_signing_up": "20th of Feb, 2024",
+"registration_link": "https://forms.gle/K8oWeuxHpZSn2RQS8"
+},
+{
+  "event_name": "Magnovite 2024",
+  "event_location": "CHRIST (Deemed to be University), Kengeri Campus, Bengaluru",
+  "event_date": "February 12th & 13th 2024",
+  "event_time": "Not provided",
+  "event_restrictions": "Open for all",
+  "event_category": "fests",
+  "last_date_for_signing_up": "Not provided",
+  "event_registration_link": "https://forms.gle/FiH6b69LfJ21bAWg8"
+},
+{
+  "event_name": "IIT Madras Shaastra Techathon 2024",
+  "event_location": "IIT Madras",
+  "event_date": null,
+  "event_time": null,
+  "event_restrictions": "Open to all students of institutional subscribers of the Shaastra magazine",
+  "event_category": "competitions",
+  "last_date_for_signing_up": null,
+  "event_registration_link": null
+},
+{
+  "event_name": "PES MUN Society Club Recruitments",
+  "event_location": "PES University RR Campus",
+  "event_category": "recruitments",
+  "event_open_to": "PES students",
+  "event_date": null,
+  "event_time": null,
+  "event_last_date_for_sign_up": "12th March",
+  "event_registration_link": "https://forms.gle/1eNC1u2JQNdPrbFU8"
+},
+{
+  "event_name": "Textiles Innovation Challenge",
+  "event_location": "Online",
+  "event_date": null,
+  "event_time": null,
+  "event_restrictions": "Open for early startups",
+  "event_category": "competitions",
+  "last_date_for_signing_up": null,
+  "event_registration_link": "https://www.startupindia.gov.in/content/sih/en/ams-application/challenge.html?applicationId=65da0ef2e4b06352cbeffed3"
+},
+{
+"event": {
+"event_name": "ICDR 2024 | Contest with exciting prizes",
+"event_location": null,
+"event_date": null,
+"event_time": null,
+"event_restrictions": null,
+"event_category": "competitions",
+"last_date_for_signing_up": null,
+"event_registration_link": null
+},
+"event": {
+"event_name": "ICDR 2024 | Contest with exciting prizes",
+"event_location": null,
+"event_date": null,
+"event_time": null,
+"event_restrictions": null,
+"event_category": "competitions",
+"last_date_for_signing_up": null,
+"event_registration_link": null
+}
+},
+{
+  "event": {
+    "name": "National Level Project Competition-2024",
+    "location": "Bangalore Institute of Technology",
+    "date": "13th April 2024",
+    "time": null,
+    "restrictions": null,
+    "category": "competitions",
+    "registration_link": null,
+    "last_date_for_signing_up": null
   }
+},
+{
+  "event_name": "MahilAI club recruitment",
+  "event_location": "Online",
+  "event_date": "Not provided",
+  "event_time": "Not provided",
+  "event_restrictions": "Open to all",
+  "event_category": "recruitments",
+  "last_date_for_signing_up": "Not provided",
+  "event_registration_link": "https://forms.gle/GYrfigQguHXCed979"
+},
+{
+  "event_name": "Graviton 2.0",
+  "event_location": "13th Floor, BE Block, PES University, Bangalore",
+  "event_date": "April 6 and 7, 2024",
+  "event_time": null,
+  "event_restrictions": "Open to all students",
+  "event_category": "hackathons",
+  "registration_deadline": "April 2nd, 2024, 11:59PM",
+  "registration_link": "https://docs.google.com/forms/d/e/1FAIpQLSde6WqXNx-LNA3biNnxDZnQEkGvLUoHOakjA45czVj7FKI3qA/viewform?usp=sf_link"
+},
+{
+  "event_name": "Holi 2024",
+  "event_location": null,
+  "event_date": "Monday March 25, 2024",
+  "event_time": null,
+  "event_restrictions": "only for PES Students",
+  "event_category": null,
+  "last_date_for_signing_up": null,
+  "event_registration_link": null
+},
+{
+  "event_name": "Dance Odyssey: Intra-College Dance Competition",
+  "event_location": "MRD Auditorium (RR Nagar Campus)",
+  "event_date": "25th March 2024",
+  "event_time": "4:00 pm onwards",
+  "event_open_to_all": "PES students only",
+  "event_category": "competitions",
+  "last_date_for_signing_up": null,
+  "event_registration_link": "https://forms.gle/6kAvWbUMGr6epvHR6"
+},
+{
+  "event_name": "TerraTech Hackathon 2024",
+  "event_location": "IIIT Bengaluru",
+  "event_date": "15th & 16th February 2024",
+  "event_time": null,
+  "event_restrictions": null,
+  "event_category": "hackathons",
+  "registration_link": "http://terratech.gfsi.in"
+},
+{
+  "event_name": "CID Police Hackathon - CIDECODE",
+  "event_location": "PES University",
+  "event_date": "2nd March",
+  "event_time": null,
+  "event_restrictions": null,
+  "event_category": "hackathons",
+  "last_date_for_signing_up": "January 31, 2024",
+  "event_registration_link": "www.cidecode.in"
+}
 ]

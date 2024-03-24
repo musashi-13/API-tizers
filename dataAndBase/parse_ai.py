@@ -15,7 +15,7 @@ ans = ""
 for data in data_list:
     # Concatenate subject and body to form the prompt
         prompt = f"{data['subject']}. {data['body']}"
-        combined_prompt = f"{prompt}. From this information give me the following attributes: 1)Give me the event name,event location,event date and time, event restrictions if it is open for all or only for pes students,last date for signing up and event registration link  2)Create the following fields as mentioned before and provide the necessary information after reading the database , if there is no such attribute/keyword in that event then return null for that event attribute. All of the above things that i have mentioned give in json format"
+        combined_prompt = f"{prompt}. From this information give me the following attributes: 1)Give me the event name,event location,event date and time, event restrictions if it is open for all or only for pes students,event category that is categorise event into one out of [hackathons, fests, recruitments, competitions, conferences, quizzes, marathons, exams] and last date for signing up and event registration link  2)Create the following fields as mentioned before and provide the necessary information after reading the database , if there is no such attribute/keyword in that event then return null for that event attribute. All of the above things that i have mentioned give in json format"
         response = model.generate_content(combined_prompt)
         generated_text = response.text
         ans += generated_text + '\n'
