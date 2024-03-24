@@ -18,7 +18,11 @@ export default function NavBar() {
     }
     return(
        <nav className="bg-primary-100 flex py-2 px-4 justify-between">
-        <Image src='/logo sm.png' alt='logo' width={30} height={30}/>
+        <div className="flex gap-4">
+            <Image src='/logo sm.png' alt='logo' width={30} height={30}/>
+            <p className="text-xl" style={{ fontFamily: 'Roboto, sans-serif' }}>SYNCD</p>
+        </div>
+        
             <div className="flex justify-between gap-4">
                 {!loggedIn ? (
                     <div className="flex gap-4">

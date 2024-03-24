@@ -38,7 +38,7 @@ export default function CarouselBox(props: CarouselBoxProps) {
 
     return(
         <div style={{zIndex: "5"}}>
-            <p className='text-primary-300 px-4 py-2 text-xl font-semibold'>Latest events in {props.collegeName}</p>
+            <p className='text-primary-300 pl-12 py-2 text-xl font-semibold'>Latest events in {props.collegeName}</p>
             <Carousel sx={{width: "90vw", margin: "auto", zIndex: "3"}} autoPlay={true} swipe={true} indicators={true} navButtonsAlwaysVisible={true} cycleNavigation={true} animation='slide'>
             {
                 items.map( (item, i) => 
