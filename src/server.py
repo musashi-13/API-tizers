@@ -25,8 +25,8 @@ collection = db[collection_name]
 # Retrieve documents from the collection
 documents = collection.find()
 
-# Define the path for the output JSON file
-output_file_path = "mongodb_data.json"
+# Create an empty list to store the JSON-formatted documents
+json_documents = []
 
 # Convert ObjectId to string for JSON serialization
 def json_serial(obj):
@@ -34,12 +34,17 @@ def json_serial(obj):
         return str(obj)
     raise TypeError("Type not serializable")
 
-# Open the output JSON file in write mode
+# Iterate over documents and append each JSON-formatted document to the list
+for document in documents:
+    json_document = json.loads(json.dumps(document, default=json_serial))
+    json_documents.append(json_document)
+
+# Define the path for the output JSON file
+output_file_path = "mongodb_data.json"
+
+# Open the output JSON file in write mode and write the entire list to the file
 with open(output_file_path, "w", encoding="utf-8") as output_file:
-    # Iterate over documents and write each one to the JSON file
-    for document in documents:
-        json.dump(document, output_file, default=json_serial)
-        output_file.write("\n")  # Add a newline between documents
+    json.dump(json_documents, output_file, default=json_serial, indent=2)  # Use indent for pretty formatting
 
 # Close the MongoDB connection
 client.close()

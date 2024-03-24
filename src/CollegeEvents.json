@@ -151,5 +151,16 @@
   "regStatus": "",
   "studentCriteria": "",
   "like": 0
+},
+{
+  "eventName": "ICFI",
+  "eventFrom": "2024-03-24T09:00:00",
+  "eventTo": "2024-03-24T16:00:00",
+  "studentCriteria": "Open To All",
+  "regLink": "https://www.hallothon.com/?fbclid=PAAabn1Gk4OtChVaUkPY0t-GoneHNI8W4-PtKrhiztV1f3Q0sL72AhfNDqfwo",
+  "regStatus": "2024-03-24T23:00:00",
+  "eventDesc": "Research Paper",
+  "eventTheme": "Conference",
+  "like": 0
 }
 ]

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import './App.css';
 import TodayCardContainer from './TodayContainer';
 import UpcomingCardContainer from './UpcomingContainer';
@@ -10,9 +10,12 @@ import { faHeart, faBell, faScrewdriverWrench, faUser } from '@fortawesome/free-
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { Link } from 'react-router-dom';
 import './ChatBox.css'; // Import the CSS file for ChatBox styling
+import CollegeEvents from "./CollegeEvents.json";
 
-function App() {
+function App(props) {
+  const [eventData, setEventData] = useState(null);
   const [showLiked, setShowLiked] = useState(false);
+  const [likedEvents, setLikedEvents] = useState([]);
   const [isSidebarOpen, setSidebarOpen] = useState(false);
   const [isActiveAll, setIsActiveAll] = useState(true);
   const [isActive1, setIsActive1] = useState(false);
@@ -24,12 +27,24 @@ function App() {
   const [isActive7, setIsActive7] = useState(false);
   const [isActive8, setIsActive8] = useState(false);
 
+  useEffect(() => {
+    // Retrieve liked events from localStorage
+    const event = CollegeEvents.find(event => event.eventName=== props.EventName)
+    setEventData(event);
+    const likedStatus = localStorage.getItem(`event_${props.EventName}_liked`);
+    setShowLiked(likedStatus === "true");
+    
+  
+  },[props.EventName]);
+
   const toggleSidebar = () => {
     setSidebarOpen(!isSidebarOpen);
   };
-
   const toggleShowLiked = () => {
-    setShowLiked(!showLiked);
+    const newLikedStatus = !showLiked;
+  setShowLiked(newLikedStatus);
+  // Store the new liked status in localStorage
+  localStorage.setItem(`event_${props.EventName}_liked`, newLikedStatus.toString());
   };
 
   const toggleColorAll = () => {
