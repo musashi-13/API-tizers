@@ -13,13 +13,9 @@ type EventItem = {
     eventLoc: string;
 };
 
-
-
-
-
 export default function CarouselSlide(item: EventItem) {
     
-    const [mainColor, setMainColor] = useState('#f0f0f0');  
+    const [mainColor, setMainColor] = useState('#000000');  
     return (
         <div className="flex text-white" style={{zIndex: 0, background: `linear-gradient(to right, rgb(0,0,0,1) -400px, ${mainColor} 400px)`, height: "310px"}}>
             <div className="flex p-4 pl-12 flex-col" style={{width: "50em"}}>
