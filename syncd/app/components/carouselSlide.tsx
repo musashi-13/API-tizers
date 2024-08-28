@@ -1,9 +1,8 @@
 "use client"
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendarDays, faClock } from "@fortawesome/free-regular-svg-icons";
 import { faLocationDot, faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
-import ColorThief from 'colorthief';
 import NextImage from "next/image";
 type EventItem = {
     eventName: string;
@@ -14,34 +13,13 @@ type EventItem = {
     eventLoc: string;
 };
 
-type RGBColor = [number, number, number];
-type Palette = RGBColor[];
 
-const getDarkestColor = (palette: Palette): RGBColor => {
-    return palette.reduce((minArray: RGBColor, currentArray: RGBColor) => {
-        return currentArray[0] < minArray[0] ? currentArray : minArray;
-    }, palette[0]);
-};
 
 
 
 export default function CarouselSlide(item: EventItem) {
     
     const [mainColor, setMainColor] = useState('#f0f0f0');  
-    useEffect(() => {
-        const colorThief = new ColorThief();
-        
-        const img = new Image();
-        img.src = item.eventImage;
-
-        img.addEventListener('load', () => {
-            const palette = colorThief.getPalette(img, 4);
-            console.log(palette)
-            const darkestColor = getDarkestColor(palette)
-            const rgbColor = `rgb(${darkestColor.join(', ')})`;
-            setMainColor(rgbColor);
-        });
-    }, [item.eventImage]);
     return (
         <div className="flex text-white" style={{zIndex: 0, background: `linear-gradient(to right, rgb(0,0,0,1) -400px, ${mainColor} 400px)`, height: "310px"}}>
             <div className="flex p-4 pl-12 flex-col" style={{width: "50em"}}>
